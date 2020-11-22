@@ -9,6 +9,7 @@
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.IdentityModel.Tokens;
     using System.Text;
+    using Document;
     using Firms;
     using Microsoft.OpenApi.Models;
 
@@ -23,6 +24,7 @@
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<CoDbContext>();
 
+            
             return services;
         }
 
@@ -63,7 +65,8 @@
 
         public static IServiceCollection AddInjectedServices(this IServiceCollection services)
            => services.AddTransient<IIdentityService, IdentityService>()
-               .AddTransient<IFirmService,FirmServices>();
+               .AddTransient<IFirmService,FirmServices>()
+               .AddTransient<IDocumentService, DocumentServices>();
         
     }
 }

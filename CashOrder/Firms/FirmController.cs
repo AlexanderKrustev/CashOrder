@@ -28,7 +28,8 @@
         }
 
 
-        [HttpPost]public async Task<IActionResult> Create(CreateFirmModel model)
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateFirmModel model)
         {
             var result = await this._firmService.CreateFirmAsync(model);
 

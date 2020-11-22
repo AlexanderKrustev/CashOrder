@@ -2,7 +2,6 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Data.Models;
     using Models;
 
     public interface IFirmService

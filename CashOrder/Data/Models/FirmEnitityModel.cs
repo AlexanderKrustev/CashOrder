@@ -1,14 +1,14 @@
 ﻿namespace CashOrder.Data.Models
 {
-    using System.ComponentModel.DataAnnotations;
 
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    
     public class FirmEntityModel
     {
         public int Id { get; set; }
 
-        [Required]
-        [MaxLength(50)]
-        public string Name { get; set; }
+        [Required] [MaxLength(50)] public string Name { get; set; }
 
         public string Address { get; set; }
 
@@ -18,5 +18,8 @@
         public string Vat { get; set; }
 
 
+        public ICollection<DocumentEntityModel> DocumenCollection { get; set; }
+
     }
+
 }

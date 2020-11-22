@@ -21,6 +21,7 @@
             => await this._data.Firms.Select(f =>
                 new FirmListModel()
                 {
+                    FirmId = f.Id,
                     Name = f.Name
                 }).ToListAsync();
         
@@ -33,10 +34,9 @@
                 Name = model.Name,
                 Vat = model.Vat
             };
-           
-
+            
             await this._data.Firms.AddAsync(firm);
-           await this._data.SaveChangesAsync();
+            await this._data.SaveChangesAsync();
 
            var editedFirm = new FirmDetailsModel()
            {

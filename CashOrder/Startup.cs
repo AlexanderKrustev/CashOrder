@@ -39,8 +39,8 @@ namespace CashOrder
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-
-
+            
+            AppBuilderHelper.Migrate(app);
             app.UseSwagger()
                 .UseSwaggerUI(options =>
                 {
