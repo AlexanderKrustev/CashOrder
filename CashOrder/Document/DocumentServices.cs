@@ -12,12 +12,11 @@
     public class DocumentServices : IDocumentService
     {
         private readonly CoDbContext _data;
-        private readonly IFirmService _firmservice;
 
         public DocumentServices(CoDbContext data, IFirmService firmService)
         {
             this._data = data;
-            this._firmservice = firmService;
+
         }
 
         public async Task<IEnumerable<DocumentListModel>> GetDocumentsByFirmId(int firmId)

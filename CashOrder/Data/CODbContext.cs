@@ -14,10 +14,11 @@
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
             builder.Entity<FirmEntityModel>()
                 .HasMany<DocumentEntityModel>(c => c.DocumenCollection)
                 .WithOne(c => c.Firm);
+
+            base.OnModelCreating(builder);
 
         }
 
